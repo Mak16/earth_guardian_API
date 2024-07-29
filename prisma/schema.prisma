@@ -21,3 +21,14 @@ model Volunteer {
   email   String   @unique
   message   String?
 }
+model User {
+  id        Int      @id @default(autoincrement())
+  uid       String   @unique
+  email     String   @unique
+  first_name       String   @db.VarChar(255)
+  last_name   String   @db.VarChar(255)
+  role      String   @db.VarChar(255)
+  photoURL  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
